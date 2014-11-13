@@ -115,6 +115,8 @@
                 scopeOptions = {
                     disabled: '=?',
                     min: '=',
+                    minText: '@',
+                    maxText: '@',
                     max: '=',
                     modelMin: '=?',
                     modelMax: '=?',
@@ -388,9 +390,17 @@
                             if (scope.filter) {
                                 scope.filteredModelMin = $filter(scope.filter)(scope.modelMin, scope.filterOptions);
                                 scope.filteredModelMax = $filter(scope.filter)(scope.modelMax, scope.filterOptions);
+                            }
+
+                            if (!!scope.minText && scope.modelMin == scope.min) {
+                              scope.filteredModelMin = scope.minText
                             } else {
-                                scope.filteredModelMin = scope.modelMin;
-                                scope.filteredModelMax = scope.modelMax;
+                              scope.filteredModelMin = scope.modelMin;
+                            }
+                            if (!!scope.maxText && scope.modelMax == scope.max) {
+                              scope.filteredModelMax = scope.maxText
+                            } else {
+                              scope.filteredModelMax = scope.modelMax;
                             }
 
                             // check for no range
