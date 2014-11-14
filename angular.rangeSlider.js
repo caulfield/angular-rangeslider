@@ -394,13 +394,9 @@
 
                             if (!!scope.minText && scope.modelMin == scope.min) {
                               scope.filteredModelMin = scope.minText
-                            } else {
-                              scope.filteredModelMin = scope.modelMin;
                             }
                             if (!!scope.maxText && scope.modelMax == scope.max) {
                               scope.filteredModelMax = scope.maxText
-                            } else {
-                              scope.filteredModelMax = scope.modelMax;
                             }
 
                             // check for no range
